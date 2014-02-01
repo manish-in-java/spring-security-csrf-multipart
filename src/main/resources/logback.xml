@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration scan="true" scanPeriod="30 seconds">
+    <appender class="ch.qos.logback.core.ConsoleAppender" name="messageDestination">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss,SSS} %5p %10t %c - %m%n</pattern>
+        </encoder>
+    </appender>
+    <appender class="ch.qos.logback.classic.AsyncAppender" name="message">
+        <appender-ref ref="messageDestination" />
+    </appender>
+
+    <logger additivity="false" name="org.example">
+        <level value="info" />
+        <appender-ref ref="message" />
+    </logger>
+
+    <root level="info">
+        <appender-ref ref="message" />
+    </root>
+</configuration>
