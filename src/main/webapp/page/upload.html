@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.thymeleaf.org/layout"
+    th:inline="text"
+    layout:decorator="default">
+<head>
+<title>Coffee Inc. :: Upload</title>
+</head>
+<body>
+  <div layout:fragment="content">
+    <div class="hero-unit span9">
+      <h3>Coffee, Inc.</h3>
+            <form enctype="multipart/form-data" method="post">
+                <fieldset>
+                    <input th:name="${_csrf.parameterName}" type="hidden" th:value="${_csrf.token}" />
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th align="right">File:</th>
+                                <td align="left"><input id="file" name="file" type="file" /></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <button>Upload</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </fieldset>
+            </form>
+    </div>
+  </div>
+</body>
+</html>

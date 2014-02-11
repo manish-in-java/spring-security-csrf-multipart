@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.thymeleaf.org/layout"
+    th:inline="text"
+    layout:decorator="default">
+<head>
+<title>Coffee Inc. :: Confirmation</title>
+</head>
+<body>
+  <div layout:fragment="content">
+    <div class="hero-unit span9">
+      <h3>Coffee, Inc.</h3>
+      You uploaded: <b><span th:text="${file}"></span></b>.
+    </div>
+  </div>
+</body>
+</html>
